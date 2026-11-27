@@ -1,0 +1,36 @@
+:root {
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  color: #202a2e;
+  background: #f4f6f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+.shell { min-height: 100vh; }
+.bar {
+  height: 64px; padding: 0 32px; display: flex; align-items: center;
+  justify-content: space-between; background: #fff; border-bottom: 1px solid #dfe4e1;
+}
+.brand { display: inline-flex; align-items: center; gap: 10px; color: inherit; font-weight: 700; text-decoration: none; }
+.mark { width: 30px; aspect-ratio: 1; display: grid; place-items: center; color: white; background: #176b62; }
+.legacy { color: #315d58; font-size: 13px; text-decoration: none; }
+main { max-width: 900px; margin: 70px auto; padding: 0 28px; }
+.eyebrow { color: #26756d; font-size: 11px; font-weight: 700; }
+h1 { margin: 15px 0 9px; font-size: 32px; line-height: 1.2; }
+.intro { margin: 0 0 35px; color: #5a686d; line-height: 1.7; }
+.service { max-width: 560px; }
+.service-head { display: flex; align-items: center; gap: 9px; padding: 16px 0; border-top: 1px solid #dfe4e1; font-weight: 600; }
+.lamp { width: 8px; aspect-ratio: 1; border-radius: 50%; background: #bd842c; }
+.lamp.online { background: #24846e; }
+dl { margin: 0; }
+dl div { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-top: 1px solid #dfe4e1; font-size: 14px; }
+dt { color: #66747a; }
+dd { margin: 0; font-weight: 600; text-align: right; }
+.notice { color: #66747a; }
+@media (max-width: 600px) {
+  .bar { height: 58px; padding: 0 18px; }
+  main { margin: 48px auto; padding: 0 20px; }
+  h1 { font-size: 28px; }
+}

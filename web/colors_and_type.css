@@ -1,0 +1,357 @@
+/* ============================================================
+   Design Tokens — 中国红 / 暖白 / 火焰橙
+   Color, type, spacing, motion. Import this once at the root.
+   ============================================================ */
+
+/* Fonts: Noto Serif SC ≈ Source Han Serif, Noto Sans SC ≈ Source Han Sans.
+   Inter for Latin. Loaded via Google Fonts in HTML <head>:
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+*/
+
+:root {
+  /* ---------- BRAND PALETTE ---------- */
+  /* Dragon Red — pulled from logo. Used for headlines, key emphasis. */
+  --da-red-900: #5C0F0C;     /* deepest, shadow side of dragon */
+  --da-red-800: #7A1714;
+  --da-red-700: #8B1A1A;     /* spec range low */
+  --da-red-600: #A8201A;     /* PRIMARY brand red */
+  --da-red-500: #C0241D;
+  --da-red-100: #F4DCDA;     /* tint, for backgrounds & hairlines */
+  --da-red-050: #FBEFEE;
+
+  /* Flame Orange — accent only, for motion / dynamic elements */
+  --da-orange-700: #C73E10;
+  --da-orange-600: #E94E1B;  /* primary flame */
+  --da-orange-500: #F26A1E;
+  --da-orange-400: #F39200;  /* warm gold flame tip */
+  --da-orange-100: #FCE7D6;
+
+  /* ---------- BASE / NEUTRALS ---------- */
+  /* Warm off-white — the dominant surface. ~70% of any composition. */
+  --da-bg:        #FAF7F2;   /* page */
+  --da-bg-2:      #F3EEE6;   /* subtle panel */
+  --da-bg-3:      #EAE3D8;   /* divider band */
+  --da-paper:     #FFFFFF;   /* clean cards, slides */
+
+  /* Ink — text */
+  --da-ink:       #1A1A1A;   /* maximum contrast (rare) */
+  --da-ink-1:     #2B2B2B;   /* body */
+  --da-ink-2:     #5C5C5C;   /* secondary */
+  --da-ink-3:     #8A8580;   /* tertiary / captions */
+  --da-ink-4:     #BFB9B0;   /* disabled / hairlines */
+
+  /* Hairline / border tokens */
+  --da-line:      #E4DED3;
+  --da-line-strong: #2B2B2B;
+
+  /* ---------- SEMANTIC ---------- */
+  --da-fg:        var(--da-ink-1);
+  --da-fg-muted:  var(--da-ink-2);
+  --da-fg-subtle: var(--da-ink-3);
+  --da-fg-onRed:  #FAF7F2;
+  --da-accent:    var(--da-red-600);
+  --da-accent-hi: var(--da-orange-600);
+
+  --da-success:   var(--da-ink-1);   /* sealed/done = sober ink, not green */
+  --da-warning:   var(--da-ink-1);   /* expressed via outline form, not hue */
+  --da-danger:    var(--da-red-600);
+  --da-info:      var(--da-bg-3);    /* paper-3, not blue */
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --da-font-serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+  --da-font-sans:  "Inter", "Noto Sans SC", "Source Han Sans SC", -apple-system, "Helvetica Neue", "PingFang SC", system-ui, sans-serif;
+  --da-font-han:   "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --da-font-mono:  "JetBrains Mono", "SF Mono", "Menlo", monospace;
+
+  /* Type scale — strong contrast between display and body. */
+  --da-fs-display: clamp(48px, 6.5vw, 88px);
+  --da-fs-h1:      clamp(36px, 4vw, 56px);
+  --da-fs-h2:      clamp(28px, 2.6vw, 40px);
+  --da-fs-h3:      22px;
+  --da-fs-h4:      18px;
+  --da-fs-body:    16px;
+  --da-fs-small:   14px;
+  --da-fs-caption: 12px;
+  --da-fs-overline: 11px;
+
+  --da-lh-tight:  1.08;
+  --da-lh-snug:   1.25;
+  --da-lh-body:   1.65;
+
+  --da-track-tight: -0.02em;
+  --da-track-body:  0;
+  --da-track-overline: 0.18em;
+
+  /* ---------- SPACING (8pt + 4pt half steps) ---------- */
+  --da-s-1: 4px;
+  --da-s-2: 8px;
+  --da-s-3: 12px;
+  --da-s-4: 16px;
+  --da-s-5: 24px;
+  --da-s-6: 32px;
+  --da-s-7: 48px;
+  --da-s-8: 64px;
+  --da-s-9: 96px;
+  --da-s-10: 128px;
+
+  /* ---------- RADII ---------- */
+  /* Direct-angle preference; keep radii small. */
+  --da-r-0: 0px;
+  --da-r-1: 2px;
+  --da-r-2: 4px;
+  --da-r-3: 8px;
+  --da-r-pill: 999px;
+
+  /* ---------- BORDERS ---------- */
+  --da-border-thin:   1px solid var(--da-line);
+  --da-border-strong: 1px solid var(--da-ink-1);
+  --da-border-accent: 2px solid var(--da-red-600);
+
+  /* ---------- SHADOWS (very restrained) ---------- */
+  --da-shadow-1: 0 1px 0 rgba(43,43,43,0.04), 0 1px 2px rgba(43,43,43,0.06);
+  --da-shadow-2: 0 2px 4px rgba(43,43,43,0.06), 0 8px 24px -8px rgba(43,43,43,0.10);
+  --da-shadow-3: 0 12px 32px -12px rgba(92,15,12,0.18);
+
+  /* ---------- MOTION ---------- */
+  --da-ease-sharp:  cubic-bezier(0.2, 0.0, 0.0, 1.0);   /* preferred */
+  --da-ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1.0);
+  --da-dur-fast: 120ms;
+  --da-dur-base: 200ms;
+  --da-dur-slow: 360ms;
+
+  /* ---------- LAYOUT ---------- */
+  --da-page-max: 1280px;
+  --da-gutter:   var(--da-s-7);
+
+  /* ---------- TECH LAYER ----------
+     Tech feeling on light surfaces only. No dark mode, no glows.
+     Tech is conveyed through grid, ticks, monospace, brackets — not hue.
+  */
+  --da-grid-line:      rgba(43,43,43,0.05);
+  --da-grid-line-strong: rgba(168,32,26,0.10);
+  --da-grid:
+    linear-gradient(to right,  var(--da-grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(to bottom, var(--da-grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--da-bg);
+  --da-grid-warm:
+    linear-gradient(to right,  var(--da-grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(to bottom, var(--da-grid-line) 1px, transparent 1px) 0 0 / 32px 32px,
+    radial-gradient(1000px 500px at 88% -10%, rgba(168,32,26,0.08), transparent 60%),
+    var(--da-bg);
+}
+
+/* ============================================================
+   TECH LAYER · UTILITIES (light-only)
+   ============================================================ */
+
+.da-grid { background: var(--da-grid); }
+.da-grid-warm { background: var(--da-grid-warm); }
+
+/* Corner brackets — frame any element with red [ ] marks */
+.da-bracket { position: relative; }
+.da-bracket::before,
+.da-bracket::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--da-red-600);
+  pointer-events: none;
+}
+.da-bracket::before { top: -6px;    left: -6px;  border-right: 0; border-bottom: 0; }
+.da-bracket::after  { bottom: -6px; right: -6px; border-left:  0; border-top:    0; }
+
+/* Tech-style monospace eyebrow with leading red diamond */
+.da-tech-tag {
+  font-family: var(--da-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--da-red-600);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.da-tech-tag::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--da-red-600);
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+/* Telemetry rule — hairline + hard red ticks */
+.da-tech-rule {
+  height: 1px;
+  background: var(--da-line);
+  position: relative;
+  margin: 24px 0;
+}
+.da-tech-rule::before,
+.da-tech-rule::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: var(--da-red-600);
+}
+.da-tech-rule::before { left: 0; }
+.da-tech-rule::after  { left: 64px; }
+
+/* Coordinate label — tiny mono caption next to UI groups */
+.da-coord {
+  font-family: var(--da-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--da-ink-3);
+}
+
+/* Mono data value (KPI) — red on paper, no glow */
+.da-data {
+  font-family: var(--da-font-mono);
+  font-weight: 500;
+  color: var(--da-red-600);
+  letter-spacing: -0.01em;
+}
+.da-data .u {
+  color: var(--da-ink-3);
+  margin-left: 4px;
+  font-size: 0.55em;
+}
+
+/* Live signal dot — red, paper, gentle pulse */
+.da-live {
+  width: 8px; height: 8px;
+  background: var(--da-red-600);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 0 rgba(168,32,26,0.4);
+  animation: da-pulse 2.2s cubic-bezier(0.2,0,0,1) infinite;
+}
+@keyframes da-pulse { 50% { box-shadow: 0 0 0 6px rgba(168,32,26,0); } }
+
+/* ============================================================
+   BASE / SEMANTIC ELEMENTS
+   ============================================================ */
+html, body {
+  background: var(--da-bg);
+  color: var(--da-fg);
+  font-family: var(--da-font-sans);
+  font-size: var(--da-fs-body);
+  line-height: var(--da-lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.da-display {
+  font-family: var(--da-font-serif);
+  font-weight: 900;
+  font-size: var(--da-fs-display);
+  line-height: var(--da-lh-tight);
+  letter-spacing: var(--da-track-tight);
+  color: var(--da-ink);
+}
+
+h1, .da-h1 {
+  font-family: var(--da-font-serif);
+  font-weight: 700;
+  font-size: var(--da-fs-h1);
+  line-height: var(--da-lh-tight);
+  letter-spacing: var(--da-track-tight);
+  color: var(--da-ink);
+}
+
+h2, .da-h2 {
+  font-family: var(--da-font-han);
+  font-weight: 700;
+  font-size: var(--da-fs-h2);
+  line-height: var(--da-lh-snug);
+  letter-spacing: var(--da-track-tight);
+  color: var(--da-ink-1);
+}
+
+h3, .da-h3 {
+  font-family: var(--da-font-han);
+  font-weight: 600;
+  font-size: var(--da-fs-h3);
+  line-height: var(--da-lh-snug);
+  color: var(--da-ink-1);
+}
+
+h4, .da-h4 {
+  font-family: var(--da-font-han);
+  font-weight: 500;
+  font-size: var(--da-fs-h4);
+  line-height: var(--da-lh-snug);
+  color: var(--da-ink-1);
+}
+
+p, .da-p {
+  font-family: var(--da-font-sans);
+  font-size: var(--da-fs-body);
+  line-height: var(--da-lh-body);
+  color: var(--da-ink-1);
+  max-width: 64ch;
+}
+
+.da-lede {
+  font-family: var(--da-font-han);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--da-ink-2);
+  max-width: 60ch;
+}
+
+.da-small  { font-size: var(--da-fs-small); color: var(--da-ink-2); }
+.da-caption{ font-size: var(--da-fs-caption); color: var(--da-ink-3); }
+
+.da-overline {
+  font-family: var(--da-font-sans);
+  font-size: var(--da-fs-overline);
+  font-weight: 600;
+  letter-spacing: var(--da-track-overline);
+  text-transform: uppercase;
+  color: var(--da-red-600);
+}
+
+code, .da-code {
+  font-family: var(--da-font-mono);
+  font-size: 0.92em;
+  background: var(--da-bg-2);
+  padding: 1px 6px;
+  border-radius: var(--da-r-1);
+  color: var(--da-ink-1);
+}
+
+/* Anchors */
+.da-link {
+  color: var(--da-red-600);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color var(--da-dur-fast) var(--da-ease-sharp);
+}
+.da-link:hover { color: var(--da-orange-600); }
+
+/* Section accent — a single decisive red bar */
+.da-accent-bar {
+  display: inline-block;
+  width: 36px;
+  height: 3px;
+  background: var(--da-red-600);
+  margin-bottom: var(--da-s-4);
+}
+
+/* Geometric facet decoration — used very sparingly */
+.da-facet-corner {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  border-color: transparent var(--da-red-600) transparent transparent;
+  top: 0; right: 0;
+}

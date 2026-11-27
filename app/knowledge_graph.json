@@ -1,0 +1,358 @@
+{
+  "nodes": [
+    {
+      "id": "ai-ml-overview",
+      "category": "基础概念",
+      "prereqs": [],
+      "related": [
+        "supervised-unsupervised",
+        "loss-gradient-descent",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "AI/ML/DL包含关系",
+        "三大学习范式",
+        "模型与训练",
+        "损失函数与梯度下降",
+        "泛化与过拟合",
+        "数据集划分"
+      ],
+      "summary": "理解AI/ML/DL关系与机器学习从数据学习、优化、泛化的整体框架。"
+    },
+    {
+      "id": "supervised-unsupervised",
+      "category": "基础概念",
+      "prereqs": [
+        "ai-ml-overview"
+      ],
+      "related": [
+        "linear-regression",
+        "logistic-classification",
+        "reinforcement-learning"
+      ],
+      "core_concepts": [
+        "分类与回归",
+        "聚类",
+        "降维(PCA)",
+        "标签与无标签数据",
+        "经验风险最小化",
+        "K-means"
+      ],
+      "summary": "理解监督与无监督学习的数据形式、任务类型与目标区别。"
+    },
+    {
+      "id": "linear-regression",
+      "category": "模型与优化",
+      "prereqs": [
+        "supervised-unsupervised",
+        "ai-ml-overview"
+      ],
+      "related": [
+        "loss-gradient-descent",
+        "logistic-classification",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "均方误差 MSE",
+        "最小二乘法 OLS",
+        "正规方程闭式解",
+        "梯度下降",
+        "正则化(岭/Lasso)",
+        "决定系数 R²"
+      ],
+      "summary": "学完能用线性模型拟合并预测连续值,掌握模型-损失-优化主线。"
+    },
+    {
+      "id": "logistic-classification",
+      "category": "模型与优化",
+      "prereqs": [
+        "linear-regression",
+        "loss-gradient-descent",
+        "supervised-unsupervised"
+      ],
+      "related": [
+        "model-evaluation",
+        "neural-networks",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "sigmoid 函数",
+        "交叉熵损失",
+        "线性决策边界",
+        "极大似然估计",
+        "Softmax 多分类",
+        "对数几率 logit"
+      ],
+      "summary": "学完能用逻辑回归做二分类并输出概率,理解 sigmoid 与交叉熵"
+    },
+    {
+      "id": "loss-gradient-descent",
+      "category": "模型与优化",
+      "prereqs": [
+        "linear-regression",
+        "logistic-classification"
+      ],
+      "related": [
+        "backpropagation",
+        "neural-networks",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "MSE均方误差",
+        "交叉熵",
+        "学习率",
+        "SGD/小批量",
+        "凸与非凸",
+        "优化器(Adam)"
+      ],
+      "summary": "理解模型如何用损失衡量误差并沿负梯度迭代优化参数。"
+    },
+    {
+      "id": "backpropagation",
+      "category": "模型与优化",
+      "prereqs": [
+        "neural-networks",
+        "loss-gradient-descent"
+      ],
+      "related": [
+        "cnn",
+        "rnn-lstm",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "链式法则",
+        "误差信号δ",
+        "前向传播缓存",
+        "梯度消失/爆炸",
+        "自动微分",
+        "计算图"
+      ],
+      "summary": "学完你将理解神经网络如何高效计算梯度并训练参数"
+    },
+    {
+      "id": "neural-networks",
+      "category": "神经网络",
+      "prereqs": [
+        "logistic-classification",
+        "loss-gradient-descent",
+        "linear-regression"
+      ],
+      "related": [
+        "backpropagation",
+        "overfitting-regularization",
+        "cnn"
+      ],
+      "core_concepts": [
+        "多层感知机MLP",
+        "激活函数(ReLU/Sigmoid/Tanh)",
+        "前向传播",
+        "非线性表达能力",
+        "通用逼近定理",
+        "参数初始化"
+      ],
+      "summary": "理解MLP结构与激活函数如何赋予网络非线性逼近复杂函数的能力"
+    },
+    {
+      "id": "overfitting-regularization",
+      "category": "评估与泛化",
+      "prereqs": [
+        "supervised-unsupervised",
+        "loss-gradient-descent",
+        "model-evaluation"
+      ],
+      "related": [
+        "bias-variance-cv",
+        "linear-regression",
+        "neural-networks"
+      ],
+      "core_concepts": [
+        "过拟合与欠拟合",
+        "L1/L2正则化(权重衰减)",
+        "Dropout",
+        "Early stopping",
+        "模型容量与U形曲线",
+        "数据增强"
+      ],
+      "summary": "学完能诊断过/欠拟合并用正则化提升模型泛化能力"
+    },
+    {
+      "id": "model-evaluation",
+      "category": "评估与泛化",
+      "prereqs": [
+        "supervised-unsupervised",
+        "logistic-classification"
+      ],
+      "related": [
+        "bias-variance-cv",
+        "overfitting-regularization",
+        "loss-gradient-descent"
+      ],
+      "core_concepts": [
+        "混淆矩阵",
+        "精确率与召回率",
+        "F1 分数",
+        "ROC-AUC 与 PR 曲线",
+        "阈值依赖性",
+        "回归指标(MAE/MSE/R²)"
+      ],
+      "summary": "学完能针对分类/回归任务选用合适指标并据业务目标客观评判模型好坏"
+    },
+    {
+      "id": "bias-variance-cv",
+      "category": "评估与泛化",
+      "prereqs": [
+        "overfitting-regularization",
+        "supervised-unsupervised",
+        "loss-gradient-descent"
+      ],
+      "related": [
+        "model-evaluation",
+        "linear-regression"
+      ],
+      "core_concepts": [
+        "偏差-方差分解",
+        "欠拟合与过拟合",
+        "k 折交叉验证",
+        "泛化误差",
+        "不可约噪声",
+        "数据泄漏"
+      ],
+      "summary": "学完能诊断欠/过拟合并用交叉验证选出复杂度合适的模型"
+    },
+    {
+      "id": "cnn",
+      "category": "神经网络",
+      "prereqs": [
+        "neural-networks",
+        "backpropagation",
+        "loss-gradient-descent"
+      ],
+      "related": [
+        "attention-transformer",
+        "rnn-lstm",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "卷积核与参数共享",
+        "局部感受野",
+        "池化下采样",
+        "步幅与填充",
+        "多通道特征图",
+        "层次化特征"
+      ],
+      "summary": "理解卷积如何高效提取图像局部特征,并能搭建用于视觉任务的CNN"
+    },
+    {
+      "id": "rnn-lstm",
+      "category": "神经网络",
+      "prereqs": [
+        "neural-networks",
+        "backpropagation",
+        "loss-gradient-descent"
+      ],
+      "related": [
+        "cnn",
+        "attention-transformer",
+        "embeddings"
+      ],
+      "core_concepts": [
+        "隐藏状态递归",
+        "沿时间反向传播BPTT",
+        "梯度消失/爆炸",
+        "LSTM细胞状态",
+        "三门机制",
+        "GRU与序列建模范式"
+      ],
+      "summary": "理解RNN/LSTM如何用循环与门控建模序列依赖并缓解长依赖问题"
+    },
+    {
+      "id": "attention-transformer",
+      "category": "序列与大模型",
+      "prereqs": [
+        "rnn-lstm",
+        "embeddings",
+        "neural-networks"
+      ],
+      "related": [
+        "llm-pretrain-finetune-rag",
+        "backpropagation"
+      ],
+      "core_concepts": [
+        "Query/Key/Value",
+        "缩放点积注意力",
+        "自注意力",
+        "多头注意力",
+        "位置编码",
+        "掩码自注意力"
+      ],
+      "summary": "理解自注意力与 Transformer 架构,看懂现代大模型的核心机制。"
+    },
+    {
+      "id": "embeddings",
+      "category": "序列与大模型",
+      "prereqs": [
+        "loss-gradient-descent",
+        "logistic-classification",
+        "neural-networks"
+      ],
+      "related": [
+        "attention-transformer",
+        "llm-pretrain-finetune-rag",
+        "supervised-unsupervised"
+      ],
+      "core_concepts": [
+        "分布式假设",
+        "Word2Vec(CBOW/Skip-gram)",
+        "负采样",
+        "GloVe共现矩阵",
+        "余弦相似度",
+        "嵌入矩阵查表"
+      ],
+      "summary": "理解如何把词映射为稠密向量并度量语义相似度"
+    },
+    {
+      "id": "llm-pretrain-finetune-rag",
+      "category": "序列与大模型",
+      "prereqs": [
+        "attention-transformer",
+        "embeddings",
+        "neural-networks"
+      ],
+      "related": [
+        "reinforcement-learning",
+        "loss-gradient-descent",
+        "overfitting-regularization"
+      ],
+      "core_concepts": [
+        "自监督预训练",
+        "因果/掩码语言建模",
+        "指令微调与RLHF",
+        "LoRA参数高效微调",
+        "RAG检索增强",
+        "向量检索与幻觉"
+      ],
+      "summary": "理解LLM如何预训练、微调对齐及用RAG注入外部知识。"
+    },
+    {
+      "id": "reinforcement-learning",
+      "category": "模型与优化",
+      "prereqs": [
+        "loss-gradient-descent",
+        "supervised-unsupervised"
+      ],
+      "related": [
+        "neural-networks",
+        "ai-ml-overview"
+      ],
+      "core_concepts": [
+        "马尔可夫决策过程(MDP)",
+        "策略与价值函数",
+        "贝尔曼方程",
+        "Q-learning与时序差分(TD)",
+        "探索与利用",
+        "蒙特卡洛(MC)"
+      ],
+      "summary": "理解智能体如何通过试错与奖励学习最优策略,并能用价值函数与TD更新求解"
+    }
+  ]
+}

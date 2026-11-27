@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>智学 · 个性化学习指导与评价</title>
+<meta name="description" content="基于大语言模型的个性化学习指导与评价 — 面向人工智能方向本科生的教学辅助">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='2' fill='%23A8201A'/%3E%3Crect x='9' y='9' width='14' height='14' transform='rotate(45 16 16)' fill='%23FAF7F2'/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="styles.css">
+<!-- KaTeX 数学公式 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<!-- Markdown + 净化 -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<!-- 图标 -->
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" aria-label="主导航">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">智</div>
+      <div>
+        <div class="brand-zh">智学</div>
+        <div class="brand-en">PERSONALIZED&nbsp;LEARNING</div>
+      </div>
+    </div>
+    <nav class="nav" id="nav" aria-label="功能导航"></nav>
+    <div class="nav-spacer"></div>
+    <nav class="nav" id="nav-bottom"></nav>
+    <button class="org" id="org" aria-label="账户与设置">
+      <div class="org-dot" aria-hidden="true">学</div>
+      <div class="org-info">
+        <div class="org-name"><span class="sk" style="display:inline-block;width:72%;height:11px"></span></div>
+        <div class="org-plan">个性化学习</div>
+      </div>
+      <i data-lucide="chevron-right"></i>
+    </button>
+    <div class="side-foot da-coord">v1.0.0 · © 2026 智学</div>
+  </aside>
+
+  <div class="col">
+    <div class="topbar">
+      <div class="topbar-left">
+        <button class="da-btn ghost sm hamburger" id="hamburger" aria-label="打开菜单" aria-expanded="false" aria-controls="nav"><i data-lucide="menu"></i></button>
+        <div class="crumbs" id="crumbs" aria-label="当前位置"></div>
+      </div>
+      <div class="topbar-right">
+        <div class="telemetry">
+          <span class="coord" id="idx-state">IDX·…</span>
+          <span class="da-live" id="live" role="status" aria-label="服务状态"></span>
+        </div>
+        <button class="avatar" id="avatar" aria-label="账户与设置">学</button>
+      </div>
+    </div>
+    <main class="main" id="view" aria-live="off"></main>
+    <footer class="app-footer" id="app-footer">
+      <span class="da-coord">智学 · 个性化学习指导与评价</span>
+      <span class="foot-sep">/</span>
+      <span class="da-coord" id="foot-engine">Gemini</span>
+      <span class="foot-sep">/</span>
+      <span class="da-coord">v1.0.0 · © 2026</span>
+    </footer>
+  </div>
+</div>
+
+<div id="gate" class="gate"></div>
+<div id="nav-scrim" aria-hidden="true"></div>
+<div id="sr-status" class="sr-only" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
